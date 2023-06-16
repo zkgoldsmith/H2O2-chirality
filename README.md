@@ -18,7 +18,7 @@ You can find CP2K input files for H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub> 
 cp -r /home/zkg/Share/for-katrina/H2* /path/to/your/scratch/
 ```
 
-filling in the path to your scratch. (Hint: if your present directory is your target directory then it is just `./`)
+by filling in the path to your scratch. (Hint: if your present directory is your target directory then it is just `./`)
 
 Once the files are in your scratch, start with the H<sub>2</sub>O single-point energy calculation, `cd H2O/energy`.
 
