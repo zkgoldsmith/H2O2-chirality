@@ -32,4 +32,10 @@ sbatch job.sh
 
 Now `cd ../../H2O2/energy` and do the same tasks: review the CP2K input and `job.sh` files, using your own H2O2 coordinates if you have them and making sure your own CP2K `*.sif` file is sourced in the submit script. Then, submit this job the same way.
 
+If your job ran successfully, you can see the energy of the molecule with
 
+```
+grep "ENERGY|" [output file]
+```
+
+When the output file corresponds to a geometry optimization, you should get multiple calculated energies.
