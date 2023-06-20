@@ -10,7 +10,7 @@ We will use this Github markdown as well as [this Doc](https://docs.google.com/d
 
 We will both update this space with instructions, snippets of code, input files, plots, results, etc. as we go to document our progress.
 
-## DFT calculations of H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub>
+## DFT calculations of H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub> molecules with CP2K
 
 You can find CP2K input files for H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub> on Della in subdirectories of `/home/zkg/Share/for-katrina`. Copy these files+directories to your `/scratch` directory with
 
