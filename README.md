@@ -42,7 +42,7 @@ When the output file corresponds to a geometry optimization, you should get mult
 
 ## Linking and using pre-installed XCrysDen
 
-I have copied over a pre-installed XCrysDen software package for you to do visualizations on the Della without any further installation. First add the following lines to your `~/.bashrc` file:
+I have copied over a pre-installed XCrysDen software package for you to do visualizations on the Della without any further installation. First add the following lines to your Della `~/.bashrc` file:
 
 ```
 XCRYSDEN_TOPDIR=/home/zkg/Share/for-katrina/xcrysden-1.5.60-bin-semishared
@@ -51,7 +51,13 @@ export XCRYSDEN_TOPDIR XCRYSDEN_SCRATCH
 PATH="$XCRYSDEN_TOPDIR:$PATH:$XCRYSDEN_TOPDIR/scripts:$XCRYSDEN_TOPDIR/util"
 ```
 
-Then do a `source ~/.bashrc`. Then, by simply using the command `xcrysden`, you should be able to open the program. You can read online about what file formats XCrysDen will support for you to quickly do visualizations and illustrate how e.g. the molecule went from it's inital to optimized geometry.
+Then do a `source ~/.bashrc`. Then, by simply using the command `xcrysden`, you should be able to open the program. You can read online about what file formats XCrysDen will support for you to quickly do visualizations and illustrate how e.g. the molecule went from it's inital to optimized geometry. You can `cd` to a directory where you performed a geometry optimization calculation and do the following:
+
+```
+xcrysden --xyz PROJECT-1-pos.xyz
+```
+
+And click through the prompts the GUI gives you as you deem appropriate.
 
 
 
