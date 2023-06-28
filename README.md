@@ -59,5 +59,6 @@ xcrysden --xyz PROJECT-1-pos.xyz
 
 And click through the prompts the GUI gives you as you deem appropriate.
 
-
+## New Section: Optimizations of H2O2
+We previously optimized H2O using CP2k, and 
 
