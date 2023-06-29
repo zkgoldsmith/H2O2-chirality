@@ -60,7 +60,19 @@ xcrysden --xyz PROJECT-1-pos.xyz
 And click through the prompts the GUI gives you as you deem appropriate.
 
 ## KM: Optimizations of H2O2
-We previously optimized H2O using CP2k, and 
+We previously optimized H2O and H2O2 using CP2K to recognize the lowest energy values of each molecules. With the values of the global minima for H2O2, I made graphs and charts to record the lowest energy values and the degree of each dihedral angle. The lowest energy value from the geometry optimization of H2O2 is -33.1266130021056. The XYZ coordinates before optimization for this energy value are the following:
+
+```
+O             0.00000        0.00000        0.00000
+  
+O             1.50000        0.00000        0.00000
+
+H             0.00000        1.00000        0.00000
+
+H             1.50000        0.00000        1.00000
+```
+
+With the lowest energy value discovered, I am able to transition to begin AIMD of H2O2 to recognize the change H2O2 will have, now that temperature is a factor of change in energy values. 
 
 ## ZKG: Initializing an AIMD trajectory of H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub> using CP2K
 
