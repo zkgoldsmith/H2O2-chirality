@@ -91,7 +91,7 @@ H        -1.5134525431        2.6038259476        0.7886601011
 
 ## KM: Optimizations of H2O2 (CP2K)
 
-We previously optimized H2O2 using CP2K to recognize the lowest energy values of each molecules. The geometry optimization took 118.742 seconds. The geometry optimization calculation took 101.001 seconds longer than the single-point energy calculation. With the values of the global minima for H2O2, I made graphs and charts to record the lowest energy values and the degree of each dihedral angle. The lowest energy value from the geometry optimization of H2O2 is -33.1266130021056. 
+We previously optimized H2O2 with seven different input xyz coordinates utilizing CP2K to recognize the lowest energy value. The first geometry optimization took 118.742 seconds. The geometry optimization calculation took 101.001 seconds longer than the single-point energy calculation. With the values of the global minima for H2O2, I made graphs and charts to record the lowest energy values and the degree of each dihedral angle. The lowest energy value from the geometry optimization of H2O2 is -33.1266130021056. 
 
 The XYZ coordinates before optimization for this energy value are the following:
 
@@ -104,6 +104,8 @@ H             0.00000        1.00000        0.00000
 
 H             1.50000        0.00000        1.00000
 ``` 
+
+
 
 With the lowest energy value discovered, I am able to transition to begin AIMD of H2O2 to recognize the change H2O2 will have, now that temperature is a factor of change in energy values. 
 
