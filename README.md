@@ -149,7 +149,7 @@ O-H bond length- 0.970 Angstroms
 HOH angle- 109.5 degrees
 
 
-bond lengthss angles AFTER geometry optimization:
+bond lengths angles AFTER geometry optimization:
 
 O-H bond length- 0.980631 Angstroms
 
