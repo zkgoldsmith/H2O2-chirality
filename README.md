@@ -85,6 +85,29 @@ H             1.50000        0.00000        1.00000
 
 With the lowest energy value discovered, I am able to transition to begin AIMD of H2O2 to recognize the change H2O2 will have, now that temperature is a factor of change in energy values. 
 
+## KM: Visualization (Avogadro)
+
+H2O molecule
+bond lengths/angles BEFORE geometry optimization:
+_O-H bond length- 0.970 Angstroms 
+_HOH angle- 109.5 degrees
+bond lengthss angles AFTER geometry optimization:
+_O-H bond length- 0.980631 Angstroms
+_HOH angle- 109.471 degrees
+
+H2O2 molecule
+bond lengths/angles Before geometry optimization:
+_O-H bond length- 0.970 Angstroms
+_O-O bond length- 1.375 Angstroms
+_H-H bond length- 2.727 Angstroms
+_dihedral angle- -180.0 degrees
+bond lengths/angles AFTER geometry optimization:
+_O-H bond length- 0.985 Angstroms
+_O-O bond length- 1.488 Angstroms 
+_H-H bond length- 2.622 Angstroms
+_dihedral angle- -179.333 degrees
+
+##KM: Difference between the CP2K input files for the geometry optimization and Single-point Energy Calculation
 ## ZKG: Initializing an AIMD trajectory of H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub> using CP2K
 
 I prepared a CP2K input and slurm script for you to begin AIMD of H2O2. Copy them from my shared directory:
