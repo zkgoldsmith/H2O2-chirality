@@ -82,11 +82,11 @@ H         -1.54479        2.59417        0.77350
 
 The XYZ coordinates after optimization for the final energy value of -17.2050491884 are the following:
 
-'''
+```
 O        -1.2499803158        2.0835319913        0.0002989149
 H        -0.2707887169        2.1243561196        0.0289958752
 H        -1.5134525431        2.6038259476        0.7886601011
-'''
+```
 
 
 ## KM: Optimizations of H2O2 (CP2K)
