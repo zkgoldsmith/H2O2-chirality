@@ -40,16 +40,14 @@ grep "ENERGY|" [output file]
 
 When the output file corresponds to a geometry optimization, you should get multiple calculated energies.
 
-##KM: Results of DFT Calculations
+## KM: Results of DFT Calculations
 
 After running the Single-Point Energy Calculation for H2O, the relevant data I collected was the end coordinates in the output file, the time spent runing the calculation, and the final energy values.
 
 Time- H2O energy: 11.669 seconds
 
 
-After plotting the total energy of the H2O molecule in google sheets using CP2K, the graph has an expoonential decay and remains stable at the eleventh step, reaching its lowest energy point at the last step, 41.
-
-
+After plotting the total energy of the H2O molecule in google sheets using CP2K, the graph has an exponential decay and remains stable at the eleventh step, reaching its lowest energy point at the last step, 41.
 
 ## ZKG: Linking and using pre-installed XCrysDen
 
@@ -70,8 +68,32 @@ xcrysden --xyz PROJECT-1-pos.xyz
 
 And click through the prompts the GUI gives you as you deem appropriate.
 
-## KM: Optimizations of H2O2
-We previously optimized H2O and H2O2 using CP2K to recognize the lowest energy values of each molecules. With the values of the global minima for H2O2, I made graphs and charts to record the lowest energy values and the degree of each dihedral angle. The lowest energy value from the geometry optimization of H2O2 is -33.1266130021056. The XYZ coordinates before optimization for this energy value are the following:
+## KM: Optimizations of H2O (CP2K)
+
+Using CP2K to optimize the geometry of the H2O molecule provided me with the global minimum of H2O. The geometry optimization took 41.388 seconds. The geometry optimization calculation was 29.719 seconds longer than the single-point energy calculation. With the energy results that I got from the H2O.out file, I made a graph to visualize the energy decreasing. 
+
+The XYZ coordinates before optimization are the following:
+
+'''
+O         -1.22146        2.10626        0.00000
+H         -0.25146        2.10626        0.00000
+H         -1.54479        2.59417        0.77350
+'''
+
+The XYZ coordinates after optimization for the final energy value of -17.2050491884 are the following:
+
+'''
+O        -1.2499803158        2.0835319913        0.0002989149
+H        -0.2707887169        2.1243561196        0.0289958752
+H        -1.5134525431        2.6038259476        0.7886601011
+'''
+
+
+## KM: Optimizations of H2O2 (CP2K)
+
+We previously optimized H2O2 using CP2K to recognize the lowest energy values of each molecules. The geometry optimization took 118.742 seconds. The geometry optimization calculation took 101.001 seconds longer than the single-point energy calculation. With the values of the global minima for H2O2, I made graphs and charts to record the lowest energy values and the degree of each dihedral angle. The lowest energy value from the geometry optimization of H2O2 is -33.1266130021056. 
+
+The XYZ coordinates before optimization for this energy value are the following:
 
 ```
 O             0.00000        0.00000        0.00000
@@ -81,33 +103,81 @@ O             1.50000        0.00000        0.00000
 H             0.00000        1.00000        0.00000
 
 H             1.50000        0.00000        1.00000
-```
+``` 
 
 With the lowest energy value discovered, I am able to transition to begin AIMD of H2O2 to recognize the change H2O2 will have, now that temperature is a factor of change in energy values. 
+
+## KM: Difference between the CP2K input files for the geometry optimization and Single-point Energy Calculation
+
+```
+<  RUN_TYPE ENERGY 
+---
+>  RUN_TYPE GEO_OPT 
+5c5
+<  WALLTIME 00:15:00
+---
+>  WALLTIME 00:25:00
+6a7,12
+> &MOTION
+>  &GEO_OPT
+>   OPTIMIZER BFGS #CG
+>   MAX_ITER 40
+>  &END GEO_OPT
+> &END MOTION
+11c17
+<   POTENTIAL_FILE_NAME ./POTENTIAL
+---
+>   POTENTIAL_FILE_NAME ./POTENTIAL 
+58,60c64,66
+< O         -2.77888        1.76816        0.00000
+< H         -1.80888        1.76816        0.00000
+< H         -3.20855        2.45255        0.83837
+---
+> O         -1.22146        2.10626        0.00000
+> H         -0.25146        2.10626        0.00000
+> H         -1.54479        2.59417        0.77350
+```
 
 ## KM: Visualization (Avogadro)
 
 H2O molecule
+
 bond lengths/angles BEFORE geometry optimization:
-_O-H bond length- 0.970 Angstroms 
-_HOH angle- 109.5 degrees
+
+O-H bond length- 0.970 Angstroms 
+
+HOH angle- 109.5 degrees
+
+
 bond lengthss angles AFTER geometry optimization:
-_O-H bond length- 0.980631 Angstroms
-_HOH angle- 109.471 degrees
+
+O-H bond length- 0.980631 Angstroms
+
+HOH angle- 109.471 degrees
+
 
 H2O2 molecule
-bond lengths/angles Before geometry optimization:
-_O-H bond length- 0.970 Angstroms
-_O-O bond length- 1.375 Angstroms
-_H-H bond length- 2.727 Angstroms
-_dihedral angle- -180.0 degrees
-bond lengths/angles AFTER geometry optimization:
-_O-H bond length- 0.985 Angstroms
-_O-O bond length- 1.488 Angstroms 
-_H-H bond length- 2.622 Angstroms
-_dihedral angle- -179.333 degrees
 
-##KM: Difference between the CP2K input files for the geometry optimization and Single-point Energy Calculation
+bond lengths/angles Before geometry optimization:
+O-H bond length- 0.970 Angstroms
+
+O-O bond length- 1.375 Angstroms
+
+H-H bond length- 2.727 Angstroms
+
+dihedral angle- -180.0 degrees
+
+
+bond lengths/angles AFTER geometry optimization:
+
+O-H bond length- 0.985 Angstroms
+
+O-O bond length- 1.488 Angstroms 
+
+H-H bond length- 2.622 Angstroms
+
+dihedral angle- -179.333 degrees
+
 ## ZKG: Initializing an AIMD trajectory of H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub> using CP2K
 
 I prepared a CP2K input and slurm script for you to begin AIMD of H2O2. Copy them from my shared directory:
