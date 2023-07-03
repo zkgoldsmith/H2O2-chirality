@@ -214,4 +214,33 @@ This means that if there exists a file `PROJECT-1.restart`, then do a sed comman
 
 Once you’ve edited the input and job script as appropriate, go ahead and submit the calculation. We will discuss ways of checking and analyzing the output soon.
 
+## ZKG: Monitoring and analyzing the AIMD trajectory of H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub>
+
+You can check the progress of the AIMD run with:
+
+```
+head -n1 PROJECT-1.ener && tail -n1 PROJECT-1.ener
+```
+
+The `head -n1` command prints the first line of the file and the `tail -n1` command prints the last. You can you multiple commands in one entry by connecting them with `&&`. Post the output of this command here.
+
+Let's also try to plot with `matplotlib` before we reach out to PRC about visualization. Make sure you are logged in to Della with `ssh -Y`. 
+
+First, make sure you have the appropriate modular environment by doing `module load anaconda3/2023.3`.
+
+Then copy the file I've prepared for you to the directory where your AIMD ran (run this from the AIMD directory):
+
+```
+cp /home/zkg/Share/for-katrina/H2O2/md/plot_pot_energy.py .
+```
+
+This is a Python script that will plot specified columns of the `PROJECT-1.ener` file. Execute it with:
+
+```
+python plot_pot_energy.py
+```
+
+This should take at least a few moments to work. If it works, send me or post here a screenshot of the plot; if it doesn't then email me the error message and we will troubleshoot from there.
+
+
 
