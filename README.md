@@ -40,12 +40,14 @@ grep "ENERGY|" [output file]
 
 When the output file corresponds to a geometry optimization, you should get multiple calculated energies.
 
-## KM: Results of DFT Calculations
+## KM: Results of DFT Calculation of H2O
 
 After running the Single-Point Energy Calculation for H2O, the relevant data I collected was the end coordinates in the output file, the time spent runing the calculation, and the final energy values.
 
 Time- H2O energy: 11.669 seconds
 
+
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/3cc681f1-9f84-421d-88f3-a539e3aedcf4)
 
 After plotting the total energy of the H2O molecule in google sheets using CP2K, the graph has an exponential decay and remains stable at the eleventh step, reaching its lowest energy point at the last step, 41.
 
