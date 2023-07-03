@@ -224,6 +224,24 @@ head -n1 PROJECT-1.ener && tail -n1 PROJECT-1.ener
 
 The `head -n1` command prints the first line of the file and the `tail -n1` command prints the last. You can you multiple commands in one entry by connecting them with `&&`. Post the output of this command here.
 
+## KM: Progress of the AIMD Trajectory of H2O2
+Using the command Zach provided:
+
+```
+head -n1 PROJECT-1.ener && tail -n1 PROJECT-1.ener
+```
+
+I recieved this output:
+
+```
+#     Step Nr.          Time[fs]        Kin.[a.u.]          Temp[K]            Pot.[a.u.]        Cons Qty[a.u.]        UsedTime[s]
+     41206        41206.000000         0.011400535       800.000000000       -33.126123959       -33.112005524         5.262881273
+```
+
+This result tells me that the calculation stopped at 41,206 steps. The calculation ran for 42,206 femtoseconds. The kinetic energy, 0.011400535, and potential energy, -33.126123959, were given as astronomical units. The temperature was set at 800 kelvin and throughout the calculation, the kinetic energy was increased to keep the same temperature to decrease the velocity. If the potential energy is too low during the calculation, the calculation will speed up the velocity to reach the constant temperature set at 800 kelvin. The molecule is constantly moving and changing throughout the calculation. 
+
+## ZKG: Continuation of Monitoring and analyzing the AIMD trajectory of H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub>
+
 Let's also try to plot with `matplotlib` before we reach out to PRC about visualization. Make sure you are logged in to Della with `ssh -Y`. 
 
 First, make sure you have the appropriate modular environment by doing `module load anaconda3/2023.3`.
@@ -242,5 +260,6 @@ python plot_pot_energy.py
 
 This should take at least a few moments to work. If it works, send me or post here a screenshot of the plot; if it doesn't then email me the error message and we will troubleshoot from there.
 
+## KM: Results of AIMD Calculation
 
-
+The AIMD calculation differs from the single-point energy calculations and the geometry optimization calculations due to temperature being a factor, the amount of time used for the AIMD calculation, and the amount of times the AIMD calculation was ran. 
