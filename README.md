@@ -265,3 +265,5 @@ This should take at least a few moments to work. If it works, send me or post he
 ## KM: Results of AIMD Calculation
 
 The AIMD calculation differs from the single-point energy calculations and the geometry optimization calculations due to temperature being a factor, the amount of time used for the AIMD calculation, and the amount of times the AIMD calculation was ran. 
+
+
