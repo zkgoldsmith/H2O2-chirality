@@ -266,4 +266,14 @@ This should take at least a few moments to work. If it works, send me or post he
 
 The AIMD calculation differs from the single-point energy calculations and the geometry optimization calculations due to temperature being a factor, the amount of time used for the AIMD calculation, and the amount of times the AIMD calculation was ran. 
 
+In order to visualize and transcribe the results, I needed to utilize the graphing tool on della, gnuplot. As I was having trouble accessing gnuplot, I was assisted by one of my post-doc's, Pablo Piaggi. He had sat with me and investigated my error message I kept recieving on della and made sure that I had XQuartz previously installed. He made sure that I was also logged in to della using:
+
+```
+ssh -Y
+```
+
+Once I was logged in using the correct format, we restarted my local computer and eventually, gnuplot began working. 
+
+To visualize how the temperature evolved throughout the calculation as a fuction of time, 
+
 
