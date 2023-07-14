@@ -269,11 +269,55 @@ The AIMD calculation differs from the single-point energy calculations and the g
 In order to visualize and transcribe the results, I needed to utilize the graphing tool on della, gnuplot. As I was having trouble accessing gnuplot, I was assisted by one of my post-doc's, Pablo Piaggi. He had sat with me and investigated my error message I kept recieving on della and made sure that I had XQuartz previously installed. He made sure that I was also logged in to della using:
 
 ```
-ssh -Y
+ssh -Y [username]@della[-gpu].princeton.edu
 ```
 
 Once I was logged in using the correct format, we restarted my local computer and eventually, gnuplot began working. 
 
 To visualize how the temperature evolved throughout the calculation as a fuction of time, 
 
+## NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers
+
+We will attempt to characterize the barriers to interconvert the two lowest energy enantiomers using Nudged Elastic Band (NEB) calculations in CP2K. NEB is a method for calculating intermediates between local minimum configurations using constrained optimizations that enforces the sampling of the reaction coordinate. A well-converged NEB calculation will approximate the minimum energy path (MEP) connecting the known minima. Climbing-image NEB (CI-NEB) furthermore will use the highest-energy intermediate to seek a saddle-point transition state configuration to best characterize the barrier. 
+
+Find the input files in the two subdirectories of `/home/zkg/Share/for-katrina/H2O2/neb`. Make an NEB subdirectory of your scratch for the H2O2 calculations and do `cp -r /home/zkg/Share/for-katrina/H2O2/neb/* [target directory]` where the target directory is this new directory in your scratch. If you execute the `cp -r` from this directory then your target directory is just `.`.
+
+You will run two CI-NEB calculations represented by the two subdirectories that you just copied, indicated by the higher energy cis and trans configurations of H2O2 that you have already established as local minima in the geometry optimizations. Let's look at the key differences of the NEB input files. This is from `.../cis_ts/H2O2.inp`:
+
+```
+&GLOBAL
+ RUN_TYPE BAND
+ FLUSH_SHOULD_FLUSH T
+ PRINT_LEVEL MEDIUM
+&END GLOBAL
+&MOTION
+ &BAND
+  BAND_TYPE CI-NEB
+  NUMBER_OF_REPLICA 9
+  K_SPRING 0.05
+  &CONVERGENCE_CONTROL
+   MAX_FORCE 0.0050
+   RMS_FORCE 0.0250
+  &END
+  &CI_NEB
+   NSTEPS_IT 2
+  &END
+  &REPLICA
+   COORD_FILE_NAME h2o2_ini.xyz
+  &END
+  &REPLICA
+   COORD_FILE_NAME h2o2_cis.xyz
+  &END
+  &REPLICA
+   COORD_FILE_NAME h2o2_fin.xyz
+  &END
+ &END BAND
+&END MOTION
+```
+
+The `RUN_TYPE BAND` indicates that we are doing an NEB calculation; `BAND_TYPE CI-NEB` further specifies the method. `NUMBER_OF_REPLICA` indicates that we are using 9 images along the reaction path; this includes the initial and final configurations we will provide. The `NSTEPS_IT` keyword means that we will some (2) iterations of standard NEB before turning on the climbing image.
+
+The various .xyz files under `&REPLICA \\ COORD_FILE_NAME` give the files containing the initial, transition state guess, and final coordinates from your optimizations.
+
+Make sure to edit the CP2K executable in `job.sh` before running this (`sbatch job.sh`). Run both of them (`cis_ts` and `trans_ts`) for the indicated 3 hours and we will analyze them from there.
 
