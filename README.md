@@ -276,6 +276,36 @@ Once I was logged in using the correct format, we restarted my local computer an
 
 To visualize how the temperature evolved throughout the calculation as a fuction of time, 
 
+### Dihedral angle vs. time from high-temperature AIMD
+
+We are going to calculate the dihedral angle of the H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub> molecule from the AIMD trajectory ran at 800 K using the [ASE](https://wiki.fysik.dtu.dk/ase/) Atoms tool. You used ASE pretty extensively during the Deep Modeling for Molecular Simulation Workshop and now we are going to incorporate it into your H<sub>2</sub>O<sub>2</sub> project. 
+
+First you have to install ASE on your profile on Della. This is very simple; assuming your base environment includes Anaconda3, you can simply do:
+
+```
+pip install --upgrade --user ase
+```
+
+> If this doesn't work, do `module load anaconda3/2023.3` and try again.
+
+I prepared you a combined bash/python/ASE post-processing script for the dihedral at `/home/zkg/Share/for-katrina/H2O2/md/dihedral.sh`. `cp` this file **AND** the file `box.dat` to your AIMD directory in your scratch. We will discuss _how_ this script works together, but first you can execute it by doing the following:
+
+```
+./dihedral.sh PROJECT-pos-1.xyz
+```
+
+This may take a minute or two. The output file, `dihedrals.dat` reports the dihedral angle of the molecule (in degrees) vs. time. Try quickly plotting  with gnuplot using:
+
+```
+p 'dihedrals.dat' w lp
+```
+
+> Challenge: Modify a python script to plot `dihedrals.dat` with matplotlib including the appropriate axis labels, etc.
+
+Post your plot here and analyze the results. What happens to the dihedral angle during the calculation? Roughly how many distinct configurations does the molecule explore during the trajectory? Does it spend most of the time in any one or two configurations? Do you see both chiral enantiomers during the AIMD? 
+
+To go a step further, try to plot the dihedral angle and the potential energy (both vs. time) top-and-bottom. What can you infer about the relationship between potential energy and dihedral angle?
+
 ## NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers
 
 We will attempt to characterize the barriers to interconvert the two lowest energy enantiomers using Nudged Elastic Band (NEB) calculations in CP2K. NEB is a method for calculating intermediates between local minimum configurations using constrained optimizations that enforces the sampling of the reaction coordinate. A well-converged NEB calculation will approximate the minimum energy path (MEP) connecting the known minima. Climbing-image NEB (CI-NEB) furthermore will use the highest-energy intermediate to seek a saddle-point transition state configuration to best characterize the barrier. 
