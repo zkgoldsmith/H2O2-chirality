@@ -98,11 +98,8 @@ The XYZ coordinates before optimization for this energy value are the following:
 H2O2 A coordinates
 ```
 O             0.00000        0.00000        0.00000
-  
 O             1.50000        0.00000        0.00000
-
 H             0.00000        1.00000        0.00000
-
 H             1.50000        0.00000        1.00000
 ```
 
@@ -190,7 +187,7 @@ H        -33.125151130575347 au
 
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/5de2305c-1357-48fa-b2c2-d9e8afae1643)
 
-## This chart compares the energy values in electron volts to the lowest and highest energy values.
+## This chart compares the energy values in electron volts to the lowest and highest energy values
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/095ca515-f5b6-4b7e-b752-de96764bbf25)
 
 With the lowest energy value discovered, I am able to transition to begin AIMD of H2O2 to recognize the change H2O2 will have, now that temperature is a factor of change in energy values. 
@@ -228,43 +225,36 @@ With the lowest energy value discovered, I am able to transition to begin AIMD o
 
 ## KM: Visualization (Avogadro)
 
-H2O molecule
-
-bond lengths/angles before geometry optimization:
-
+H2O molecule-
+Bond lengths/angles before geometry optimization:
+```
 O-H bond length- 0.970 Angstroms 
-
 HOH angle- 109.5 degrees
+```
 
-
-bond lengths angles after geometry optimization:
-
+Bond lengths angles after geometry optimization:
+```
 O-H bond length- 0.980631 Angstroms
-
 HOH angle- 109.471 degrees
-
+```
 
 H2O2 molecule
 
-bond lengths/angles before geometry optimization:
+Bond lengths/angles before geometry optimization:
+```
 O-H bond length- 0.970 Angstroms
-
 O-O bond length- 1.375 Angstroms
-
 H-H bond length- 2.727 Angstroms
-
 dihedral angle- -180.0 degrees
+```
 
-
-bond lengths/angles after geometry optimization:
-
+Bond lengths/angles after geometry optimization:
+```
 O-H bond length- 0.985 Angstroms
-
 O-O bond length- 1.488 Angstroms 
-
 H-H bond length- 2.622 Angstroms
-
 dihedral angle- -179.333 degrees
+```
 
 ## ZKG: Initializing an AIMD trajectory of H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub> using CP2K
 
@@ -350,7 +340,7 @@ This should take at least a few moments to work. If it works, send me or post he
 
 The AIMD calculation differs from the single-point energy calculations and the geometry optimization calculations due to temperature being a factor, the amount of time used for the AIMD calculation, and the amount of times the AIMD calculation was ran. 
 
-In order to visualize and transcribe the results, I needed to utilize the graphing tool on della, gnuplot. As I was having trouble accessing gnuplot, I was assisted by one of my post-doc's, Pablo Piaggi. He had sat with me and investigated my error message I was recieving on della and made sure that I had XQuartz previously installed. He made sure that I was also logged in to della using:
+In order to visualize and transcribe the results, I needed to utilize the graphing tool on della, gnuplot. As I was having trouble accessing gnuplot, I was assisted by one of my post doctorate scholars, Dr. Pablo Piaggi. Pablo Piaggi works in the department of chemistry at Princeton Univeristy. Dr. Piaggi had sat with me and investigated my error message I was recieving on della and made sure that I had XQuartz previously installed. Dr. Piaggi ensured that I was also logged in to della using:
 
 ```
 ssh -Y [username]@della[-gpu].princeton.edu
@@ -358,7 +348,20 @@ ssh -Y [username]@della[-gpu].princeton.edu
 
 Once I was logged in using the correct format, we restarted my local computer and eventually, gnuplot began working. 
 
-To visualize how the temperature evolved throughout the calculation as a fuction of time, 
+To visualize how the temperature evolved throughout the calculation as a fuction of time, I plotted the temperature change over time using python 
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/46fd4af3-fc4c-4ef7-ad3a-b9060ce669cf)
+The H2O2 molecule remained in between 700 and 900 kelvin throughout the entirety of the calculation. In the input file, Zach had set the temperature at 800 kelvin and included a thermostat to allow the calculation to observate the simulation of the heat incorporated is not exceeding the amount indicated. 
+
+## Here is the potential energy evolved over time plotted using python
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/df2c9fd0-53ae-428e-8ed1-4529c04e8f13)
+The potential energy began at its peak in the calculation and around 1500-4000 femtoseconds, the potential energy rapidly declined and remained constant around 1000 femtoseconds. 
+
+Here is a closer look where the potential energy remains constant. 
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/7a94296e-d3ca-4bb2-9191-1af96de453d7)
+
+## Here is the kinetic energy evolved over time plotted using python
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/13b19176-56fe-405c-8b90-0c9558c3ee99)
+The kinetic energy remained constant between 0.013 au and 0.010 au through the entirety of the calculation. 
 
 ### Dihedral angle vs. time from high-temperature AIMD
 
