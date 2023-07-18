@@ -225,7 +225,8 @@ With the lowest energy value discovered, I am able to transition to begin AIMD o
 
 ## KM: Visualization (Avogadro)
 
-H2O molecule-
+H2O molecule
+
 Bond lengths/angles before geometry optimization:
 ```
 O-H bond length- 0.970 Angstroms 
@@ -348,20 +349,35 @@ ssh -Y [username]@della[-gpu].princeton.edu
 
 Once I was logged in using the correct format, we restarted my local computer and eventually, gnuplot began working. 
 
-To visualize how the temperature evolved throughout the calculation as a fuction of time, I plotted the temperature change over time using python 
+## KM: Visualizing the temperature, kinetic energy, and potential energy evolved throughout the calculation as a function of time
+I plotted the temperature change over time using python with this command:
+```
+python plot_temp.py
+```
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/46fd4af3-fc4c-4ef7-ad3a-b9060ce669cf)
 The H2O2 molecule remained in between 700 and 900 kelvin throughout the entirety of the calculation. In the input file, Zach had set the temperature at 800 kelvin and included a thermostat to allow the calculation to observate the simulation of the heat incorporated is not exceeding the amount indicated. 
 
-## Here is the potential energy evolved over time plotted using python
+
+Potential energy evolved over time plotted using python
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/df2c9fd0-53ae-428e-8ed1-4529c04e8f13)
 The potential energy began at its peak in the calculation and around 1500-4000 femtoseconds, the potential energy rapidly declined and remained constant around 1000 femtoseconds. 
 
+Command used to plot the potential energy:
+```
+python plot_pot_energy3.py
+```
 Here is a closer look where the potential energy remains constant. 
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/7a94296e-d3ca-4bb2-9191-1af96de453d7)
 
-## Here is the kinetic energy evolved over time plotted using python
+
+Kinetic energy evolved over time plotted using python
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/13b19176-56fe-405c-8b90-0c9558c3ee99)
 The kinetic energy remained constant between 0.013 au and 0.010 au through the entirety of the calculation. 
+
+Command used to plot the kinetic energy:
+```
+python plot_kin_energy.py
+```
 
 ### Dihedral angle vs. time from high-temperature AIMD
 
