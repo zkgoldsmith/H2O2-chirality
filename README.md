@@ -360,7 +360,7 @@ The H2O2 molecule remained in between 700 and 900 kelvin throughout the entirety
 
 Potential energy evolved over time plotted using python
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/df2c9fd0-53ae-428e-8ed1-4529c04e8f13)
-The potential energy began at its peak in the calculation and around 1500-4000 femtoseconds, the potential energy rapidly declined and remained constant around 1000 femtoseconds. 
+The potential energy began at its peak in the calculation and around 1500-4000 femtoseconds, the potential energy rapidly declined and eventually remained constant around 1000 femtoseconds. 
 
 Command used to plot the potential energy:
 ```
