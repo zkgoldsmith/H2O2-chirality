@@ -1,6 +1,6 @@
 # Progress log for Katrina Mejia, CSI Princeton summer intern 2023
 
-ZKG: We will use this Github markdown as well as [this Doc](https://docs.google.com/document/d/12itv_W-V2J_6J6nlkn0hcssBlbA7c94CLIHFn9NCGsg/edit?usp=sharing) to set and meet our agenda for this project. Our objectives at this point are the following:
+## ZKG: We will use this Github markdown as well as [this Doc](https://docs.google.com/document/d/12itv_W-V2J_6J6nlkn0hcssBlbA7c94CLIHFn9NCGsg/edit?usp=sharing) to set and meet our agenda for this project. Our objectives at this point are the following:
 
 - Establish proficiecy with Linux command line and vi(m) text editor
 - Gain experience using CP2K to perform DFT calculations of small molecules in vacuum
@@ -379,7 +379,7 @@ Command used to plot the kinetic energy:
 python plot_kin_energy.py
 ```
 
-### Dihedral angle vs. time from high-temperature AIMD
+### ZKG: Dihedral angle vs. time from high-temperature AIMD
 
 We are going to calculate the dihedral angle of the H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub> molecule from the AIMD trajectory ran at 800 K using the [ASE](https://wiki.fysik.dtu.dk/ase/) Atoms tool. You used ASE pretty extensively during the Deep Modeling for Molecular Simulation Workshop and now we are going to incorporate it into your H<sub>2</sub>O<sub>2</sub> project. 
 
@@ -409,7 +409,7 @@ Post your plot here and analyze the results. What happens to the dihedral angle 
 
 To go a step further, try to plot the dihedral angle and the potential energy (both vs. time) top-and-bottom. What can you infer about the relationship between potential energy and dihedral angle?
 
-## NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers
+## ZKG: NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers
 
 We will attempt to characterize the barriers to interconvert the two lowest energy enantiomers using Nudged Elastic Band (NEB) calculations in CP2K. NEB is a method for calculating intermediates between local minimum configurations using constrained optimizations that enforces the sampling of the reaction coordinate. A well-converged NEB calculation will approximate the minimum energy path (MEP) connecting the known minima. Climbing-image NEB (CI-NEB) furthermore will use the highest-energy intermediate to seek a saddle-point transition state configuration to best characterize the barrier. 
 
