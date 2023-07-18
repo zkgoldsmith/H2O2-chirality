@@ -355,7 +355,7 @@ I plotted the temperature change over time using python with this command:
 python plot_temp.py
 ```
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/46fd4af3-fc4c-4ef7-ad3a-b9060ce669cf)
-The H2O2 molecule remained in between 700 and 900 kelvin throughout the entirety of the calculation. In the input file, Zach had set the temperature at 800 kelvin and included a thermostat to allow the calculation to observate the simulation of the heat incorporated is not exceeding the amount indicated. 
+The H2O2 molecule remained in between 700 and 900 kelvin throughout the entirety of the calculation. In the input file, Zach had set the temperature at 800 kelvin and included a thermostat to allow the calculation to observate the simulation of the heat incorporated is not exceeding the amount indicated. The potential and kinetic energies play a vital role in the same process to keep the temperature at a consistent range. 
 
 
 Potential energy evolved over time plotted using python
