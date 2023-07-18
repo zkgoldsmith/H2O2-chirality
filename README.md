@@ -111,7 +111,7 @@ H        -0.0819626253        1.0408838689       -0.2167027582
 H         1.5819774211       -0.2167197033        1.0409061444
 ```
 
-The seven other calculations that I ran are relevant to my research due to the input xyz coordinates, which compare to the previous coordinates I indicated. Here are the other six input coordinates that I ran calcualtions with:
+The seven other calculations that I ran are relevant to my research due to the input xyz coordinates, which compare to the previous coordinates I indicated. Here are the other six input coordinates that I ran calculations with:
 
 H2O2 B coordinates
 ```
