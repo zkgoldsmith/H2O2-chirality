@@ -75,15 +75,13 @@ And click through the prompts the GUI gives you as you deem appropriate.
 Using CP2K to optimize the geometry of the H2O molecule provided me with the global minimum of H2O. The geometry optimization took 41.388 seconds. The geometry optimization calculation was 29.719 seconds longer than the single-point energy calculation. With the energy results that I got from the H2O.out file, I made a graph to visualize the energy decreasing. 
 
 The XYZ coordinates before optimization are the following:
-
-'''
+```
 O         -1.22146        2.10626        0.00000
 H         -0.25146        2.10626        0.00000
 H         -1.54479        2.59417        0.77350
-'''
+```
 
 The XYZ coordinates after optimization for the final energy value of -17.2050491884 are the following:
-
 ```
 O        -1.2499803158        2.0835319913        0.0002989149
 H        -0.2707887169        2.1243561196        0.0289958752
@@ -93,10 +91,11 @@ H        -1.5134525431        2.6038259476        0.7886601011
 
 ## KM: Optimizations of H2O2 (CP2K)
 
-We previously optimized H2O2 with seven different input xyz coordinates utilizing CP2K to recognize the lowest energy value. The first geometry optimization took 118.742 seconds. The geometry optimization calculation took 101.001 seconds longer than the single-point energy calculation. With the values of the global minima for H2O2, I made graphs and charts to record the lowest energy values and the degree of each dihedral angle. The lowest energy value from the geometry optimization of H2O2 is -33.1266130021056. 
+We previously optimized H2O2 with eight different input xyz coordinates utilizing CP2K to recognize the lowest energy value. With the values of the global minima for H2O2, I made graphs and charts to record the lowest energy values and the degree of each dihedral angle. The lowest energy value from the geometry optimization of H2O2 is -33.1266130021056. I will be providing each of the xyz coordinates for the geometry optimization of the H2O2 molecule referring to each xyz coordinates alphabetically (A, B, C, D etc.).  
 
 The XYZ coordinates before optimization for this energy value are the following:
 
+H2O2 A coordinates
 ```
 O             0.00000        0.00000        0.00000
   
@@ -105,9 +104,94 @@ O             1.50000        0.00000        0.00000
 H             0.00000        1.00000        0.00000
 
 H             1.50000        0.00000        1.00000
-``` 
+```
 
+The XYZ coordinates after optimization for this energy value are the following:
+```
+O         0.0136277821        0.0830592263        0.0005936353
+O         1.4863375684        0.0007274667        0.0830663780
+H        -0.0819626253        1.0408838689       -0.2167027582
+H         1.5819774211       -0.2167197033        1.0409061444
+```
 
+The seven other calculations that I ran are relevant to my research due to the input xyz coordinates, which compare to the previous coordinates I indicated. Here are the other six input coordinates that I ran calcualtions with:
+
+H2O2 B coordinates
+```
+O         -2.19393        1.93663       -0.10000
+O         -0.37919        1.65812       -0.10000
+H         -2.37808        2.86818       -0.29798
+H         -0.19504        0.72656        0.09798
+```
+
+H2O2 C coordinates
+```
+O         -1.99393        2.13663        0.10000
+O         -0.17919        1.85812        0.10000
+H         -2.17808        3.06818       -0.09798
+H          0.00496        0.92656        0.29798
+```
+
+H2O2 D Coordinates
+```
+O         -2.59393        1.53663       -0.50000
+O         -0.77919        1.25812       -0.50000
+H         -2.77808        2.46818       -0.69798
+H         -0.59504        0.32656       -0.30202
+```
+
+H2O2 E Coordinates
+```
+O         -1.59393        2.53663        0.50000
+O          0.22081        2.25812        0.50000
+H         -1.77808        3.46818        0.30202
+H          0.40496        1.32656        0.69798
+```
+
+H2O2 F Coordinates
+```
+O          0.00000        0.00000        0.00000
+O          1.50000        0.00000        0.00000
+H          0.00000        1.00000        0.00000
+H          1.50000        0.00000       -1.00000
+```
+
+H2O2 G Coordinates
+```
+O          0.00000        0.00000        0.00000
+O          1.50000        0.00000        0.00000
+H          0.00000        1.00000        0.00000
+H          1.50000        1.00000        0.00000
+```
+
+H2O2 H Coordinates
+```
+O         -2.09393        2.03663        0.00000
+O         -0.27919        1.75812       -0.00000
+H         -2.27808        2.96818       -0.19798
+H         -0.09504        0.82656        0.19798
+```
+
+Final Energy Values of Each Geometry Optimization Calculation
+```
+A        -33.126613002105657 au
+B        -33.125160676451515 au
+C        -33.125152654924776 au
+D        -33.125151270218097 au
+E        -33.125151270218190 au
+F        -33.126612317891428 au
+G        -33.114525811140602 au
+H        -33.125151130575347 au
+```
+
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/4af457c3-1443-4fb1-9ca3-2c8958c1fff9)
+
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/99f869cf-a87f-4664-8b41-41d0a1dc5190)
+
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/5de2305c-1357-48fa-b2c2-d9e8afae1643)
+
+## This chart compares the energy values in electron volts to the lowest and highest energy values.
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/095ca515-f5b6-4b7e-b752-de96764bbf25)
 
 With the lowest energy value discovered, I am able to transition to begin AIMD of H2O2 to recognize the change H2O2 will have, now that temperature is a factor of change in energy values. 
 
@@ -146,14 +230,14 @@ With the lowest energy value discovered, I am able to transition to begin AIMD o
 
 H2O molecule
 
-bond lengths/angles BEFORE geometry optimization:
+bond lengths/angles before geometry optimization:
 
 O-H bond length- 0.970 Angstroms 
 
 HOH angle- 109.5 degrees
 
 
-bond lengths angles AFTER geometry optimization:
+bond lengths angles after geometry optimization:
 
 O-H bond length- 0.980631 Angstroms
 
@@ -162,7 +246,7 @@ HOH angle- 109.471 degrees
 
 H2O2 molecule
 
-bond lengths/angles Before geometry optimization:
+bond lengths/angles before geometry optimization:
 O-H bond length- 0.970 Angstroms
 
 O-O bond length- 1.375 Angstroms
@@ -172,7 +256,7 @@ H-H bond length- 2.727 Angstroms
 dihedral angle- -180.0 degrees
 
 
-bond lengths/angles AFTER geometry optimization:
+bond lengths/angles after geometry optimization:
 
 O-H bond length- 0.985 Angstroms
 
@@ -266,7 +350,7 @@ This should take at least a few moments to work. If it works, send me or post he
 
 The AIMD calculation differs from the single-point energy calculations and the geometry optimization calculations due to temperature being a factor, the amount of time used for the AIMD calculation, and the amount of times the AIMD calculation was ran. 
 
-In order to visualize and transcribe the results, I needed to utilize the graphing tool on della, gnuplot. As I was having trouble accessing gnuplot, I was assisted by one of my post-doc's, Pablo Piaggi. He had sat with me and investigated my error message I kept recieving on della and made sure that I had XQuartz previously installed. He made sure that I was also logged in to della using:
+In order to visualize and transcribe the results, I needed to utilize the graphing tool on della, gnuplot. As I was having trouble accessing gnuplot, I was assisted by one of my post-doc's, Pablo Piaggi. He had sat with me and investigated my error message I was recieving on della and made sure that I had XQuartz previously installed. He made sure that I was also logged in to della using:
 
 ```
 ssh -Y [username]@della[-gpu].princeton.edu
