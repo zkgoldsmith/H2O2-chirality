@@ -410,7 +410,7 @@ Post your plot here and analyze the results. What happens to the dihedral angle 
 To go a step further, try to plot the dihedral angle and the potential energy (both vs. time) top-and-bottom. What can you infer about the relationship between potential energy and dihedral angle?
 
 ## KM: Results of dihedral angle vs. time from high-temperature 
-![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/4232754e-01cd-4a13-833e-de3f6200aa50)
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/597a00ab-e542-4dda-b2b3-5083c663ffe6)
 Throughout the calculation, the dihedral angle was in the range between twenty-five and three hundred degrees. After four picoseconds, the H2O2 molecule converges at approximately 225-250 degrees. From my interpretation, the H2O2 molecule explores three distinct configurations. The first configuration is between zero and four picoseconds around 60 to 300 degrees. The second configuration is between five and nine picoseconds around 200 to 275 degrees. The last configuration where the H2O2 molecule becomes stable is between 9.5 and 40 picoseconds around 240 to 250 degrees. The H2O2 molecule spends most of the time in the third configuration. Based on the difference in configurations throughout the calculation, both chiral enantiomers are visible. The graphs from the potential energy and the dihedral angle are inversely proportional to one another. The graphs look almost identical despite the difference where one of the graphs is upright and the other is upside down.  
 
 > ZKG: Insert the following two lines to your `plot_dihedrals.py` after the `plt.ylabel` line to add the optimized dihedral angles of your lowest energy configurations as horizontal lines in your plot. Then re-run the python script to generate your new plot.
@@ -418,9 +418,6 @@ Throughout the calculation, the dihedral angle was in the range between twenty-f
 > plt.axhline(y=114, color='r', linestyle='--',label='Conf. A')
 > plt.axhline(y=246, color='r', linestyle='--',label='Conf. F')
 > ```
-
-## KM: Dihedral angle vs. time with both conformers visible
-![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/597a00ab-e542-4dda-b2b3-5083c663ffe6)
 
 ## ZKG: NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers
 
