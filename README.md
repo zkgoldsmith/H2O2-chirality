@@ -239,7 +239,7 @@ O-H bond length- 0.980631 Angstroms
 HOH angle- 109.471 degrees
 ```
 
-H2O2 molecule
+H2O2 "H" molecule
 
 Bond lengths/angles before geometry optimization:
 ```
