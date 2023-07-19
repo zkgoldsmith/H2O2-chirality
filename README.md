@@ -460,6 +460,7 @@ Make sure to edit the CP2K executable in `job.sh` before running this (`sbatch j
 
 ## KM: Results of NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers 
 Cis configurations of H2O2 
+
 After running the CI-NEB calcualtion for the cis energy, I executed this command to see the total band energy:
 ```
 grep "BAND TOTAL EN" H2O2.out
