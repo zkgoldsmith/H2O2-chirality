@@ -574,7 +574,7 @@ Trans convergence of paths in NEB calculations
 
 Use the python script `/home/zkg/Share/for-katrina/H2O2/neb/barrier.py` to get the barrier heights for each path. Execute it with `python barrier.py paths.dat` in the directories where you have already executed `path_conv.py`.
 
-## KM: Potential energy barriers for cis and trans energy
+### KM: Potential energy barriers for cis and trans energy
 
 cis energy
 ```
