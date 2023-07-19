@@ -409,9 +409,11 @@ Post your plot here and analyze the results. What happens to the dihedral angle 
 
 To go a step further, try to plot the dihedral angle and the potential energy (both vs. time) top-and-bottom. What can you infer about the relationship between potential energy and dihedral angle?
 
-## KM: Results of dihedral angle vs. time from high-temperature 
+## KM: Results of dihedral angle vs. time from high-temperature AIMD
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/2623a77e-89b2-43cd-a72f-a0278fb3c7fd)
-Throughout the calculation, the dihedral angle was in the range between twenty-five and three hundred degrees. After four picoseconds, the H2O2 molecule converges at approximately 225-250 degrees. From my interpretation, the H2O2 molecule explores three distinct configurations. The first configuration is between zero and four picoseconds around 60 to 300 degrees. The second configuration is between five and nine picoseconds around 200 to 275 degrees. The last configuration where the H2O2 molecule becomes stable is between 9.5 and 40 picoseconds around 240 to 250 degrees. The H2O2 molecule spends most of the time in the third configuration. Based on the difference in configurations throughout the calculation, both chiral enantiomers are visible. The graphs from the potential energy and the dihedral angle are inversely proportional to one another. The graphs look almost identical despite the difference where one of the graphs is upright and the other is upside down.  
+Throughout the calculation, the dihedral angle fluctuated over a wide range. Early in the calculation (t < 4 ps) the H2O2 molecule's dihedral angle fluctuates significantly around 114 degrees, the dihedral angle of one of the lowest energy configurations. After four ps, the dihedral angle converges near 250 degrees, close to the dihedral angle of the other lowest energy configuration determined via geometry optimizations. That the molecule mostly demonstrates these two dihedral angles reflects that these configurations are lowest in potential energy. While AIMD at high temperature demonstrated H2O2 in a wide range of configurations as quantified by the dihedral angle, we will need to do NEB calculations to determine the potential energy barrier to interconvert these chiral enantiomers. The convergence of the dihedral angle coincides with the convergence of the potential energy during the trajectory.
+
+From my interpretation, the H2O2 molecule explores three distinct configurations. The first configuration is between zero and four ps around 60 to 300 degrees. The last configuration where the H2O2 molecule becomes stable is between 9.5 and 40 picoseconds around 240 to 250 degrees. The H2O2 molecule spends most of the time in the third configuration. Based on the difference in configurations throughout the calculation, both chiral enantiomers are visible. The graphs from the potential energy and the dihedral angle are inversely proportional to one another. The graphs look almost identical despite the difference where one of the graphs is upright and the other is upside down.  
 
 > ZKG: Insert the following two lines to your `plot_dihedrals.py` after the `plt.ylabel` line to add the optimized dihedral angles of your lowest energy configurations as horizontal lines in your plot. Then re-run the python script to generate your new plot.
 > ```
@@ -586,3 +588,17 @@ trans energy
 The potential energy barrier for this path is 0.03977781499975208 eV
 ```
 Judging from both potential energy barriers, the cis energy has a larger height than the trans energy by 0.2909762894 ev. 
+
+## ZKG: Visualize the NEB paths
+
+When the calculation is done do the following to concatenate the coordinates of the final path:
+
+```
+for i in {1..9} ; do tail -n6 PROJECT-pos-Replica_nr_$i-1.xyz >> path.xyz ; done
+```
+
+Then you can do:
+
+```
+xcrysden --xyz path.xyz
+```
