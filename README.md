@@ -315,7 +315,7 @@ I recieved this output:
      41206        41206.000000         0.011400535       800.000000000       -33.126123959       -33.112005524         5.262881273
 ```
 
-This result tells me that the calculation stopped at 41,206 steps. The calculation ran for 42,206 femtoseconds. The kinetic energy, 0.011400535, and potential energy, -33.126123959, were given as astronomical units. The temperature was set at 800 kelvin and throughout the calculation, the kinetic energy was increased to keep the same temperature to decrease the velocity. If the potential energy is too low during the calculation, the calculation will speed up the velocity to reach the constant temperature set at 800 kelvin. The molecule is constantly moving and changing throughout the calculation. 
+This result tells me that the calculation stopped at 41,206 steps. The calculation ran for 42,206 femtoseconds. The kinetic energy, 0.011400535 au, and potential energy, -33.126123959 au, were given as astronomical units. The temperature was set at 800 Kelvin and throughout the calculation, the kinetic energy was increased to keep the same temperature to decrease the velocity. If the potential energy is too low during the calculation, the calculation will speed up the velocity to reach the constant temperature set at 800 Kelvin. The molecule is constantly moving and changing throughout the calculation. 
 
 ## ZKG: Continuation of Monitoring and analyzing the AIMD trajectory of H<sub>2</sub>O and H<sub>2</sub>O<sub>2</sub>
 
@@ -355,7 +355,7 @@ I plotted the temperature change over time using python with this command:
 python plot_temp.py
 ```
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/46fd4af3-fc4c-4ef7-ad3a-b9060ce669cf)
-The H2O2 molecule remained in between 700 and 900 kelvin throughout the entirety of the calculation. In the input file, I had set the temperature at 800 kelvin and included a thermostat to allow the calculation to observate the simulation of the heat incorporated is not exceeding the amount indicated. The potential and kinetic energies play a vital role in the same process to keep the temperature at a consistent range. 
+The H2O2 molecule remained in between 700 and 900 Kelvin throughout the entirety of the calculation. In the input file, I had set the temperature at 800 Kelvin and included a thermostat to allow the calculation to observate the simulation of the heat incorporated is not exceeding the amount indicated. The potential and kinetic energies play a vital role in the same process to keep the temperature at a consistent range. 
 
 
 Potential energy evolved over time plotted using python
@@ -366,7 +366,7 @@ Command used to plot the potential energy:
 ```
 python plot_pot_energy3.py
 ```
-Here is a closer look where the potential energy remains constant. 
+Here is a closer look where the potential energy remains constant 
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/7a94296e-d3ca-4bb2-9191-1af96de453d7)
 
 
