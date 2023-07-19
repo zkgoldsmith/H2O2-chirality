@@ -355,7 +355,7 @@ I plotted the temperature change over time using python with this command:
 python plot_temp.py
 ```
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/46fd4af3-fc4c-4ef7-ad3a-b9060ce669cf)
-The H2O2 molecule remained in between 700 and 900 kelvin throughout the entirety of the calculation. In the input file, Zach had set the temperature at 800 kelvin and included a thermostat to allow the calculation to observate the simulation of the heat incorporated is not exceeding the amount indicated. The potential and kinetic energies play a vital role in the same process to keep the temperature at a consistent range. 
+The H2O2 molecule remained in between 700 and 900 kelvin throughout the entirety of the calculation. In the input file, I had set the temperature at 800 kelvin and included a thermostat to allow the calculation to observate the simulation of the heat incorporated is not exceeding the amount indicated. The potential and kinetic energies play a vital role in the same process to keep the temperature at a consistent range. 
 
 
 Potential energy evolved over time plotted using python
@@ -409,6 +409,10 @@ Post your plot here and analyze the results. What happens to the dihedral angle 
 
 To go a step further, try to plot the dihedral angle and the potential energy (both vs. time) top-and-bottom. What can you infer about the relationship between potential energy and dihedral angle?
 
+## KM: Results of dihedral angle vs. time from high-temperature 
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/4232754e-01cd-4a13-833e-de3f6200aa50)
+Throughout the calculation, the dihedral angle was in the range between twenty-five and three hundred degrees. After four picoseconds, the H2O2 molecule converges at approximately 225-250 degrees. From my interpretation, the H2O2 molecule explores three distinct configurations. The first configuration is between zero and four picoseconds around 60 to 300 degrees. The second configuration is between five and nine picoseconds around 200 to 275 degrees. The last configuration where the H2O2 molecule becomes stable is between 9.5 and 40 picoseconds around 240 to 250 degrees. The H2O2 molecule spends most of the time in the third configuration. Based on the difference in configurations throughout the calculation, both chiral enantiomers are visible. The graphs from the potential energy and the dihedral angle are inversely proportional to one another. The graphs look almost identical despite the difference where one of the graphs is upright and the other is upside down.  
+
 ## ZKG: NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers
 
 We will attempt to characterize the barriers to interconvert the two lowest energy enantiomers using Nudged Elastic Band (NEB) calculations in CP2K. NEB is a method for calculating intermediates between local minimum configurations using constrained optimizations that enforces the sampling of the reaction coordinate. A well-converged NEB calculation will approximate the minimum energy path (MEP) connecting the known minima. Climbing-image NEB (CI-NEB) furthermore will use the highest-energy intermediate to seek a saddle-point transition state configuration to best characterize the barrier. 
@@ -454,3 +458,93 @@ The various .xyz files under `&REPLICA \\ COORD_FILE_NAME` give the files contai
 
 Make sure to edit the CP2K executable in `job.sh` before running this (`sbatch job.sh`). Run both of them (`cis_ts` and `trans_ts`) for the indicated 3 hours and we will analyze them from there.
 
+## KM: Results of NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers 
+Cis configurations of H2O2 
+After running the CI-NEB calcualtion for the cis energy, I executed this command to see the total band energy:
+```
+grep "BAND TOTAL EN" H2O2.out
+```
+Here is the total band energy:
+```
+ BAND TOTAL ENERGY [au]        =                             -297.97399968140957
+ BAND TOTAL ENERGY [au]        =                             -298.08952071056268
+ BAND TOTAL ENERGY [au]        =                             -298.09267589598261
+ BAND TOTAL ENERGY [au]        =                             -298.09364528016084
+ BAND TOTAL ENERGY [au]        =                             -298.09448946049974
+ BAND TOTAL ENERGY [au]        =                             -298.09516002239485
+ BAND TOTAL ENERGY [au]        =                             -298.09565036467467
+ BAND TOTAL ENERGY [au]        =                             -298.09579935254374
+ BAND TOTAL ENERGY [au]        =                             -298.09604015175319
+ BAND TOTAL ENERGY [au]        =                             -298.09633803457990
+ BAND TOTAL ENERGY [au]        =                             -298.09660565817495
+ BAND TOTAL ENERGY [au]        =                             -298.09683530371825
+ BAND TOTAL ENERGY [au]        =                             -298.09722891690984
+ BAND TOTAL ENERGY [au]        =                             -298.09762471510697
+ BAND TOTAL ENERGY [au]        =                             -298.09808852646125
+ BAND TOTAL ENERGY [au]        =                             -298.09846040773732
+ BAND TOTAL ENERGY [au]        =                             -298.09935450757831
+ BAND TOTAL ENERGY [au]        =                             -298.09978212000556
+ BAND TOTAL ENERGY [au]        =                             -298.10021057967288
+ BAND TOTAL ENERGY [au]        =                             -298.10049011617377
+ BAND TOTAL ENERGY [au]        =                             -298.10065456496517
+ BAND TOTAL ENERGY [au]        =                             -298.10103594132869
+ BAND TOTAL ENERGY [au]        =                             -298.10126253340974
+ BAND TOTAL ENERGY [au]        =                             -298.10149233132609
+ BAND TOTAL ENERGY [au]        =                             -298.10161716714384
+ BAND TOTAL ENERGY [au]        =                             -298.10170615460953
+ BAND TOTAL ENERGY [au]        =                             -298.10228841377835
+ BAND TOTAL ENERGY [au]        =                             -298.10255529431879
+ BAND TOTAL ENERGY [au]        =                             -298.10277410821470
+ BAND TOTAL ENERGY [au]        =                             -298.10288303346965
+```
+
+From these results, I made a new file on della with the total energies with step numbers to execute a graph using gnuplot.  
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/6278731c-e58b-4bc3-a391-f527658ae1c1)
+Based on the graph of the cis energy, the energy began around -297.97 au at the first step, and drastically declined to about -298.09 au at the third step. As the calculation goes on, the total band energy remains consistent between -298.09 au and -298.10 au. It still appears that as the calculation goes on, the energy gradually declines. 
+
+
+
+Trans configurations of H2O2 
+
+To see the total band energy of the trans energy, I executed this command:
+```
+grep "BAND TOTAL EN" H2O2.out
+```
+Here is the total band energy:
+```
+ BAND TOTAL ENERGY [au]        =                             -298.11810219071674
+ BAND TOTAL ENERGY [au]        =                             -298.12963049817978
+ BAND TOTAL ENERGY [au]        =                             -298.13015025362040
+ BAND TOTAL ENERGY [au]        =                             -298.13046547984288
+ BAND TOTAL ENERGY [au]        =                             -298.13071403251683
+ BAND TOTAL ENERGY [au]        =                             -298.13090817444083
+ BAND TOTAL ENERGY [au]        =                             -298.13106228224893
+ BAND TOTAL ENERGY [au]        =                             -298.13115528708164
+ BAND TOTAL ENERGY [au]        =                             -298.13135964387487
+ BAND TOTAL ENERGY [au]        =                             -298.13153385279583
+ BAND TOTAL ENERGY [au]        =                             -298.13163749157553
+ BAND TOTAL ENERGY [au]        =                             -298.13171485352819
+ BAND TOTAL ENERGY [au]        =                             -298.13176744941683
+ BAND TOTAL ENERGY [au]        =                             -298.13180100983448
+ BAND TOTAL ENERGY [au]        =                             -298.13184555918104
+ BAND TOTAL ENERGY [au]        =                             -298.13186252100934
+ BAND TOTAL ENERGY [au]        =                             -298.13189814632005
+ BAND TOTAL ENERGY [au]        =                             -298.13184712817150
+ BAND TOTAL ENERGY [au]        =                             -298.13196104620323
+ BAND TOTAL ENERGY [au]        =                             -298.13172786283900
+ BAND TOTAL ENERGY [au]        =                             -298.13178926035653
+ BAND TOTAL ENERGY [au]        =                             -298.13177692792016
+ BAND TOTAL ENERGY [au]        =                             -298.13141976413561
+ BAND TOTAL ENERGY [au]        =                             -298.13151476547336
+ BAND TOTAL ENERGY [au]        =                             -298.13151752798689
+ BAND TOTAL ENERGY [au]        =                             -298.13156755152073
+ BAND TOTAL ENERGY [au]        =                             -298.13151517741238
+ BAND TOTAL ENERGY [au]        =                             -298.13150067967297
+ BAND TOTAL ENERGY [au]        =                             -298.13147616183227
+ BAND TOTAL ENERGY [au]        =                             -298.13145195244749
+ BAND TOTAL ENERGY [au]        =                             -298.13144363847761
+ BAND TOTAL ENERGY [au]        =                             -298.13139889532715
+```
+Using the same process I did to create the cis configuration graph, I created the trans graph with the trans band total energy using gnuplot. 
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/0940c6b7-1200-4412-958b-77226fe3b9d2)
+Analyzing the graph, the trans total band energy began at -298.118 au and rapidly declined to about -298.13 au around the third step. After the third step, the total band energy continues to decrease exponentially until the sixteenth step. At step sixteen, the energy seems to increase very slightly then decline slightly and increase to eventually remain stable at step twenty-five at about -298.132 au. If the calculation were to continue running past thirty-two steps, the total band energy would most likely keep declining and increasing slighly but remain in the same range of the total band energy of -298.132 au and -298.131 au. 
