@@ -602,3 +602,8 @@ Then you can do:
 ```
 xcrysden --xyz path.xyz
 ```
+
+## ZKG: Plot the dihedral angle throughout the NEB paths
+
+Find the new bash/python script `/home/zkg/Share/for-katrina/H2O2/neb/path_dihedrals.sh` and `cp` it to your NEB calculation directories. You will also need the same `box.dat` file again in this directory. `cp` it from `/home/zkg/Share/for-katrina/H2O2/neb` or from your MD directory. As long as you have generated the `path.xyz` file for the final path (the one needed to make the xcrysden animation; instructions above), this code will work by doing `./path_dihedrals.sh`. The output `path_dihedrals.dat` is a data file containing the replica # in the first column and dihedral in the second. You can quickly plot this with gnuplot (`p 'path_dihedrals.dat' w lp`) to quickly check it. If it looks good then **write a python script** to plot it with axes labels and a legend.
+
