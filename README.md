@@ -572,4 +572,17 @@ Trans convergence of paths in NEB calculations
 
 ### ZKG: Calculate barriers for each path
 
-Use the python script `/home/zkg/Share/for-katrina/H2O2/neb/barrier.py` to get the barrier heights for each path. Execute it with `python barrier.py paths.py` in the directories where you have already executed `path_conv.py`.
+Use the python script `/home/zkg/Share/for-katrina/H2O2/neb/barrier.py` to get the barrier heights for each path. Execute it with `python barrier.py paths.dat` in the directories where you have already executed `path_conv.py`.
+
+## KM: Potential energy barriers for cis and trans energy
+
+cis energy
+```
+The potential energy barrier for this path is 0.33075410440619635 eV
+```
+
+trans energy
+```
+The potential energy barrier for this path is 0.03977781499975208 eV
+```
+Judging from both potential energy barriers, the cis energy has a larger height than the trans energy by 0.2909762894 ev. 
