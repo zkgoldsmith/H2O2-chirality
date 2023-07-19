@@ -419,6 +419,9 @@ Throughout the calculation, the dihedral angle was in the range between twenty-f
 > plt.axhline(y=246, color='r', linestyle='--',label='Conf. F')
 > ```
 
+## KM: Dihedral angle vs. time with both conformers visible
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/597a00ab-e542-4dda-b2b3-5083c663ffe6)
+
 ## ZKG: NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers
 
 We will attempt to characterize the barriers to interconvert the two lowest energy enantiomers using Nudged Elastic Band (NEB) calculations in CP2K. NEB is a method for calculating intermediates between local minimum configurations using constrained optimizations that enforces the sampling of the reaction coordinate. A well-converged NEB calculation will approximate the minimum energy path (MEP) connecting the known minima. Climbing-image NEB (CI-NEB) furthermore will use the highest-energy intermediate to seek a saddle-point transition state configuration to best characterize the barrier. 
