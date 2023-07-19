@@ -183,7 +183,7 @@ H        -33.125151130575347 au
 
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/4af457c3-1443-4fb1-9ca3-2c8958c1fff9)
 
-![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/9f4c4e43-a2b2-4aad-9ec9-fcd37cd4a0a0)
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/daa33440-9e01-4362-b6b4-c86f75d955ee)
 
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/5de2305c-1357-48fa-b2c2-d9e8afae1643)
 
