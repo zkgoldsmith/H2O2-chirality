@@ -603,7 +603,20 @@ Then you can do:
 xcrysden --xyz path.xyz
 ```
 
+## KM: Visualizing NEB cis path
+Here is the graph of the cis energy plotted through the nine steps:
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/cc7a6bf2-b5ef-4e81-beb2-5d920a15f5b8)
+Steps two to eight represent the approximated energy levels between the initial and final energy configurations. Steps one and nine are not a coincidence that they are at the same energy. 
+
+Here is a slide showing how the H2O2 molecule looks at steps 1,3,5,7, and 9 with their dihedrals:
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/5c6b1b2c-ff55-49ff-a96c-3da39123952c)
+
+
+
 ## ZKG: Plot the dihedral angle throughout the NEB paths
 
 Find the new bash/python script `/home/zkg/Share/for-katrina/H2O2/neb/path_dihedrals.sh` and `cp` it to your NEB calculation directories. You will also need the same `box.dat` file again in this directory. `cp` it from `/home/zkg/Share/for-katrina/H2O2/neb` or from your MD directory. As long as you have generated the `path.xyz` file for the final path (the one needed to make the xcrysden animation; instructions above), this code will work by doing `./path_dihedrals.sh`. The output `path_dihedrals.dat` is a data file containing the replica # in the first column and dihedral in the second. You can quickly plot this with gnuplot (`p 'path_dihedrals.dat' w lp`) to quickly check it. If it looks good then **write a python script** to plot it with axes labels and a legend.
 
+## KM: Dihedral angle throughout the NEB calculation
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/0ac51955-071d-423b-b598-f4a391ea3f4a)
+From the graph, take notice of how the degrees in the angle decrease until step four, rapidly increase, then ultimately decrease gradually. 
