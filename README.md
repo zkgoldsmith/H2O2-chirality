@@ -609,7 +609,8 @@ Here is the graph of the cis energy plotted through the nine steps:
 Steps two to eight represent the approximated energy levels between the initial and final energy configurations. Steps one and nine are not a coincidence that they are at the same energy. 
 
 Here is a slide showing how the H2O2 molecule looks at steps 1,3,5,7, and 9 with their dihedrals:
-![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/5c6b1b2c-ff55-49ff-a96c-3da39123952c)
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/1474e2b5-17cf-4f81-bd32-8dbfe1f1f66e)
+
 
 
 
