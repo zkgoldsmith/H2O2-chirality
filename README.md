@@ -469,7 +469,7 @@ Make sure to edit the CP2K executable in `job.sh` before running this (`sbatch j
 ## KM: Results of NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers 
 Cis configurations of H2O2 
 
-After running the CI-NEB calcualtion for the cis energy, I executed this command to see the total band energy:
+After running the NEB calcualtion for the cis energy, I executed this command to see the total band energy:
 ```
 grep "BAND TOTAL EN" H2O2.out
 ```
@@ -621,3 +621,94 @@ Find the new bash/python script `/home/zkg/Share/for-katrina/H2O2/neb/path_dihed
 ## KM: Dihedral angle throughout the NEB calculation
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/0ac51955-071d-423b-b598-f4a391ea3f4a)
 From the graph, take notice of how the degrees in the angle decrease until step four, rapidly increase, then ultimately decrease gradually. 
+
+## KM: Results of new NEB calculations of the barriers to interconversion of chiral H2O2 enantiomers
+We re ran the optimization calculations in order to recieve accurate results for the cis and trans energy throughout the NEB calculations with new initial and final xyz coordinates. 
+
+Cis configurations of H2O2
+Here is the total band energy from the new cis energy after re running the calculations with slightly different energies and xyz coordinates:
+```
+ BAND TOTAL ENERGY [au]        =                             -297.97361053843792
+ BAND TOTAL ENERGY [au]        =                             -298.08952258739083
+ BAND TOTAL ENERGY [au]        =                             -298.09269054663059
+ BAND TOTAL ENERGY [au]        =                             -298.09366091001101
+ BAND TOTAL ENERGY [au]        =                             -298.09450653476961
+ BAND TOTAL ENERGY [au]        =                             -298.09517510929419
+ BAND TOTAL ENERGY [au]        =                             -298.09566355885084
+ BAND TOTAL ENERGY [au]        =                             -298.09581043020154
+ BAND TOTAL ENERGY [au]        =                             -298.09585784208042
+ BAND TOTAL ENERGY [au]        =                             -298.09604874124472
+ BAND TOTAL ENERGY [au]        =                             -298.09802901706161
+ BAND TOTAL ENERGY [au]        =                             -298.10113967725505
+ BAND TOTAL ENERGY [au]        =                             -298.10232434653966
+ BAND TOTAL ENERGY [au]        =                             -298.10331992804618
+ BAND TOTAL ENERGY [au]        =                             -298.10406090606847
+ BAND TOTAL ENERGY [au]        =                             -298.10459958315789
+ BAND TOTAL ENERGY [au]        =                             -298.10567380424368
+ BAND TOTAL ENERGY [au]        =                             -298.10618687970094
+ BAND TOTAL ENERGY [au]        =                             -298.10666909781190
+ BAND TOTAL ENERGY [au]        =                             -298.10697204600024
+ BAND TOTAL ENERGY [au]        =                             -298.10713146025984
+ BAND TOTAL ENERGY [au]        =                             -298.10746782465668
+ BAND TOTAL ENERGY [au]        =                             -298.10765577025450
+ BAND TOTAL ENERGY [au]        =                             -298.10786236396564
+ BAND TOTAL ENERGY [au]        =                             -298.10796328675207
+ BAND TOTAL ENERGY [au]        =                             -297.99165390279302
+ BAND TOTAL ENERGY [au]        =                             -298.04280208034788
+ BAND TOTAL ENERGY [au]        =                             -298.05526984201487
+```
+
+Here is the total band energy of the cis NEB calculation plotted vs the step number using gnuplot:
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/7554f9de-8f61-4174-9c01-109761d4145f)
+
+Trans configurations of H2O2
+For the trans NEB calculation, we changed the replica numbers from nine to five because one of the endpoints was not properly optimized in the last trans calculation. 
+
+Here is the total band energy of the new trans NEB calcualtion:
+```
+ BAND TOTAL ENERGY [au]        =                             -165.62243663345745
+ BAND TOTAL ENERGY [au]        =                             -165.62799366301002
+ BAND TOTAL ENERGY [au]        =                             -165.62827849646806
+ BAND TOTAL ENERGY [au]        =                             -165.62845473865812
+ BAND TOTAL ENERGY [au]        =                             -165.62858849393797
+ BAND TOTAL ENERGY [au]        =                             -165.62869474651475
+ BAND TOTAL ENERGY [au]        =                             -165.62877806556872
+ BAND TOTAL ENERGY [au]        =                             -165.62882968075181
+ BAND TOTAL ENERGY [au]        =                             -165.62888418134199
+ BAND TOTAL ENERGY [au]        =                             -165.62899422178015
+ BAND TOTAL ENERGY [au]        =                             -165.62906374207276
+ BAND TOTAL ENERGY [au]        =                             -165.62910532824725
+ BAND TOTAL ENERGY [au]        =                             -165.62913009853895
+ BAND TOTAL ENERGY [au]        =                             -165.62915490970627
+ BAND TOTAL ENERGY [au]        =                             -165.62917326191106
+ BAND TOTAL ENERGY [au]        =                             -165.62918988548125
+ BAND TOTAL ENERGY [au]        =                             -165.62920309539217
+ BAND TOTAL ENERGY [au]        =                             -165.62927527680952
+ BAND TOTAL ENERGY [au]        =                             -165.62929982074036
+ BAND TOTAL ENERGY [au]        =                             -165.62911472958243
+ BAND TOTAL ENERGY [au]        =                             -165.62927034128387
+ BAND TOTAL ENERGY [au]        =                             -165.62928622699562
+ BAND TOTAL ENERGY [au]        =                             -165.62932046021672
+ BAND TOTAL ENERGY [au]        =                             -165.62932752061261
+ BAND TOTAL ENERGY [au]        =                             -165.62931160822097
+ BAND TOTAL ENERGY [au]        =                             -165.62932407645110
+ BAND TOTAL ENERGY [au]        =                             -165.62932699288964
+ BAND TOTAL ENERGY [au]        =                             -165.62932474719088
+ BAND TOTAL ENERGY [au]        =                             -165.62932990207912
+ BAND TOTAL ENERGY [au]        =                             -165.62889048619414
+ BAND TOTAL ENERGY [au]        =                             -165.62930492066718
+ BAND TOTAL ENERGY [au]        =                             -165.62932062723607
+ BAND TOTAL ENERGY [au]        =                             -165.62932810891053
+ BAND TOTAL ENERGY [au]        =                             -165.62932951338797
+ BAND TOTAL ENERGY [au]        =                             -165.62889812409401
+ BAND TOTAL ENERGY [au]        =                             -165.62911269626537
+ BAND TOTAL ENERGY [au]        =                             -165.62912832022658
+ BAND TOTAL ENERGY [au]        =                             -165.62922385942105
+```
+
+Here is the total band energy plotted using gnuplot:
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/2b7e773c-9b82-4adb-873f-cd56aad4c473)
+
+## KM: Plotting convergence of paths in new NEB calculations
+Here is the cis energy plotted with the convergence of paths in NEB calculations:
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/f8a33d03-aa82-44ed-b926-5cf0d0764ee7)
