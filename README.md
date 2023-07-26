@@ -711,4 +711,5 @@ Here is the total band energy plotted using gnuplot:
 
 ## KM: Plotting convergence of paths in new NEB calculations
 Here is the cis energy plotted with the convergence of paths in NEB calculations:
-![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/f8a33d03-aa82-44ed-b926-5cf0d0764ee7)
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/f960279d-0ef2-4f78-97cb-82147a4b58d7)
+
