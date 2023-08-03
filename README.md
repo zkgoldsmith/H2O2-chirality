@@ -188,7 +188,8 @@ H        -33.125151130575347 au
 ![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/5de2305c-1357-48fa-b2c2-d9e8afae1643)
 
 This chart compares the energy values in electron volts to the lowest and highest energy values
-![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/095ca515-f5b6-4b7e-b752-de96764bbf25)
+![image](https://github.com/zkgoldsmith/H2O2-chirality/assets/137853012/35e5cfb9-c01d-4691-879d-73a7a6fccd91)
+
 
 With the lowest energy value discovered, I am able to transition to begin AIMD of H2O2 to recognize the change H2O2 will have, now that temperature is a factor of change in energy values. 
 
